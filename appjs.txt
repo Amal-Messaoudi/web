@@ -1,0 +1,51 @@
+// Fonction pour créer un nouveau jeu
+function createGame() {
+    // Remplacer le contenu de #app par la nouvelle page de création de jeu
+    var createBox = document.getElementById('create-box');
+    createBox.innerHTML = `
+        <input type="number" id="numPlayers" placeholder="Nombre de joueurs (3-20)">
+        <input type="text" id="playerName" placeholder="Nom du joueur">
+        <button id="startGameButton">Commencer le jeu</button>
+        <p class="error-message" id="error-message"></p>
+        <p id="session-code-info" style="display: none;">Code de session : <span id="session-code"></span></p> <!-- Nouveau élément pour afficher le code de session -->
+    `;
+
+    // Ajouter un écouteur d'événements au bouton de démarrage du jeu
+    var startGameButton = document.getElementById('startGameButton');
+    startGameButton.addEventListener('click', submitGameInfo);
+}
+
+
+// Fonction pour soumettre les informations du jeu
+function submitGameInfo() {
+    const numPlayers = document.getElementById('numPlayers').value;
+    const playerName = document.getElementById('playerName').value;
+
+    if (numPlayers >= 3 && numPlayers <= 20) {
+        console.log("Création d'un nouveau jeu avec " + numPlayers + " joueurs. Nom du joueur : " + playerName);
+        // Logique pour démarrer le jeu
+
+        // Générer et afficher le code de session
+        const sessionCode = generateSessionCode(); // Supposons que vous avez une fonction generateSessionCode() qui génère le code de session
+        const sessionCodeSpan = document.getElementById('session-code');
+        sessionCodeSpan.textContent = sessionCode;
+        const sessionCodeInfo = document.getElementById('session-code-info');
+        sessionCodeInfo.style.display = 'block';
+    } else {
+        var errorMessage = document.getElementById('error-message');
+        errorMessage.textContent = "Veuillez garder le nombre de joueurs entre 3 et 20";
+    }
+}
+
+// Fonction pour rejoindre un jeu existant (gardée pour la cohérence)
+function joinGame() {
+    // Implémentez cette fonction si nécessaire
+}
+
+// Générer un code de session aléatoire
+function generateSessionCode() {
+    return Math.floor(100 + Math.random() * 900); // Génère un nombre aléatoire à trois chiffres
+}
+
+// Établir une connexion avec le serveur (gardée pour la cohérence)
+const socket = io();

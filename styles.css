@@ -1,0 +1,74 @@
+/* Styles généraux pour le corps de la page */
+body {
+    background-image: url('images/pagedacc.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Jockey One', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding-top: 50px;
+}
+
+/* Styles pour la boîte principale de l'application */
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styles pour les boutons Créer et Joindre */
+#bouton-create {
+    width: 250px;
+    height: auto;
+    margin-top: 350px;
+    margin-bottom: 350px;
+    margin-left: 200px;
+    margin-right: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+#bouton-join {
+    width: 250px;
+    height: auto;
+    margin-top: 350px;
+    margin-bottom: 350px;
+    margin-left: 50px;
+    margin-right: 150px;
+    transition: transform 0.2s ease-in-out;
+}
+
+#bouton-create:hover,
+#bouton-join:hover {
+    transform: scale(1.1);
+}
+
+/* Style pour les messages */
+.message {
+    color: #5FBB53;
+    font-family: 'Jockey One', sans-serif;
+}
+
+/* Styles pour les boîtes de saisie et les messages d'erreur */
+input[type="number"],
+input[type="text"],
+.error-message {
+    color: #5FBB53;
+    font-family: 'Jockey One', sans-serif;
+}
+
+/* Styles pour les boîtes de saisie */
+.box {
+    background-image: url('images/box.jpg');
+    background-size: cover;
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

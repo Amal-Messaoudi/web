@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Div principale pour l'application -->
+    <div id="app">
+        <!-- Boutons pour créer et rejoindre une session -->
+        <div id="session-buttons">
+            <!-- Bouton Créer une Nouvelle Session -->
+            <img id="bouton-create" src="images/boutoncreate.png" alt="Create a New Session" onclick="createGame()">
+    
+            <!-- Bouton Joindre une Session Existante -->
+            <img id="bouton-join" src="images/boutonjoin.png" alt="Join an Existing Session" onclick="joinGame()">
+        </div>
+    
+        <!-- Message "Nombre de joueurs :" avant la première boîte de saisie -->
+        <p class="input-label">Number of Players:</p>
+        <!-- Boîte de saisie pour créer une nouvelle session -->
+        <div class="box" id="create-box">
+            <input type="number" id="numPlayers" placeholder="Number of Players (3-20)">
+            <input type="text" id="playerName" placeholder="Player Name">
+            <button onclick="createGame()">Create</button>
+            <p class="error-message" id="error-message"></p>
+        </div>
+    
+        <!-- Message "Nom du joueur :" avant la deuxième boîte de saisie -->
+        <p class="input-label">Player Name:</p>
+        <!-- Boîte de saisie pour rejoindre une session existante -->
+        <div class="box" id="join-box">
+            <input type="text" id="sessionCode" placeholder="Session Code">
+            <input type="text" id="usernameJoin" placeholder="Player Name">
+            <button onclick="joinGame()">Join</button>
+        </div>
+    </div>
+    
+    <!-- Script JavaScript pour la logique client -->
+    <script src="app.js"></script>
+</body>
+</html>
